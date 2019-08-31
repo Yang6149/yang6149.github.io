@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Talk about death | Hexo</title>
+  <title>单例设计模式 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Those day I think a lot,finally I start to write.it’s a tough decision.Always I want to write , I quit.This time I would give it a shot.What I want to talk about is Death. I’m afraid of death,every ti">
-<meta name="keywords" content="gossip">
+  <meta name="description" content="单例设计模式单例设计模式有两种：懒汉式和饿汉式就是在多线程中，懒汉式更安全，不会多次实例化。饿汉式为最简单的： 123456789101112131415class single&amp;#123;    private static single s=null;    private single()&amp;#123;        System.out.println(&quot;constructor&quot;);">
+<meta name="keywords" content="Java,设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Talk about death">
-<meta property="og:url" content="http://yoursite.com/2019/07/20/talk-about-death/index.html">
+<meta property="og:title" content="单例设计模式">
+<meta property="og:url" content="http://yoursite.com/2019/08/31/单例/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Those day I think a lot,finally I start to write.it’s a tough decision.Always I want to write , I quit.This time I would give it a shot.What I want to talk about is Death. I’m afraid of death,every ti">
+<meta property="og:description" content="单例设计模式单例设计模式有两种：懒汉式和饿汉式就是在多线程中，懒汉式更安全，不会多次实例化。饿汉式为最简单的： 123456789101112131415class single&amp;#123;    private static single s=null;    private single()&amp;#123;        System.out.println(&quot;constructor&quot;);">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-21T02:49:46.892Z">
+<meta property="og:updated_time" content="2019-08-31T12:13:32.194Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Talk about death">
-<meta name="twitter:description" content="Those day I think a lot,finally I start to write.it’s a tough decision.Always I want to write , I quit.This time I would give it a shot.What I want to talk about is Death. I’m afraid of death,every ti">
+<meta name="twitter:title" content="单例设计模式">
+<meta name="twitter:description" content="单例设计模式单例设计模式有两种：懒汉式和饿汉式就是在多线程中，懒汉式更安全，不会多次实例化。饿汉式为最简单的： 123456789101112131415class single&amp;#123;    private static single s=null;    private single()&amp;#123;        System.out.println(&quot;constructor&quot;);">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -155,28 +155,62 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-talk-about-death" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-单例" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Talk about death
+      单例设计模式
     </h1>
   
 
         
-        <a href="/2019/07/20/talk-about-death/" class="archive-article-date">
-  	<time datetime="2019-07-20T14:34:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
+        <a href="/2019/08/31/单例/" class="archive-article-date">
+  	<time datetime="2019-08-31T09:05:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-31</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Those day I think a lot,finally I start to write.it’s a tough decision.<br>Always I want to write , I quit.This time I would give it a shot.What I want to talk about is Death. I’m afraid of death,every time when I think about it I feel despair.It’s all people’s mortal end road. That’s a plot in a movie I watch at yesterday,a little girl come to her forth grade old brother and cry at midnight.She said ‘would mom die?’.The little boy seem upset and going to check if she is OK.But the girl grape his clothes. “you mean in the future?”.Slience.”Every one would die, sooner or later”<br>Then I can’t focus on the movie.About tens years ago,I do same thing as the girl.To ordinary people,everyone know people would die,but they don’t believe they would die.<br>When I am a boy I believe I would die.The horrible thought follow me everywhere ,and I can’t do anything.Even after I went to Psychological Hospital can’t be any better.<br>I try every thing to stop thinking about it .Screaming out aloud,hurt myself. However It’s difficult to get rid of it.Last time I use the scream to protect myself was about 2 mouths ago, and all my roommates though I got a nightmare.<br>I never tell anybody about this except my family.I feel ashame to talk about it,and I don’t talk about it to my family now because I don’t want them to be anxious.<br>Those years I read a lot about death or  some book relate to face to death.such like <em>Tuesday With Morrie</em> and some Haruki’s book. My Purpose write this is want to figure out why I get low frequency about horrible feeling about death.To be honest I don’t know why.But surely ,every time I feel lonely or some negative feeling,I am easier to think about death.So maybe what I should do is be happy.<br>Wow forty mins to write help me a lot .  </p>
-<h4 id="That’s-what-I-learn-in-positive-psychology-Maybe-it-can-reduce-my-anxiety-and-improve-my-expression"><a href="#That’s-what-I-learn-in-positive-psychology-Maybe-it-can-reduce-my-anxiety-and-improve-my-expression" class="headerlink" title="That’s what I learn in positive psychology. Maybe it can reduce my anxiety and improve my expression"></a>That’s what I learn in positive psychology. Maybe it can reduce my anxiety and improve my expression</h4>
+        <h1 id="单例设计模式"><a href="#单例设计模式" class="headerlink" title="单例设计模式"></a>单例设计模式</h1><p>单例设计模式有两种：懒汉式和饿汉式<br>就是在多线程中，懒汉式更安全，不会多次实例化。<br>饿汉式为最简单的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">single</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> single s=<span class="keyword">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">single</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"constructor"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> single <span class="title">GetSingle</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(s==<span class="keyword">null</span>)&#123;</span><br><span class="line">                 s=<span class="keyword">new</span> single();</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"write function"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这种再多线程中可能在第一次实例前会有多个线程进入s==null判断中去进行实例  </p>
+<p>懒汉式为：</p>
+<pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestRun</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
+        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;<span class="number">5</span>;i++){
+            <span class="keyword">new</span> Thread(()-&gt;{
+                single.GetSingle().write();
+            },<span class="string">"Thread"</span>+i).start();
+        }
+    }
+
+}
+<span class="class"><span class="keyword">class</span> <span class="title">single</span></span>{
+    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> single s=<span class="keyword">null</span>;
+    <span class="function"><span class="keyword">private</span> <span class="title">single</span><span class="params">()</span></span>{
+        System.out.println(<span class="string">"constructor"</span>);
+    }
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> single <span class="title">GetSingle</span><span class="params">()</span></span>{
+        <span class="keyword">if</span>(s==<span class="keyword">null</span>){
+            <span class="keyword">synchronized</span> (single.class){
+                <span class="keyword">if</span>(s==<span class="keyword">null</span>){
+                    s=<span class="keyword">new</span> single();
+                }
+            }
+        }
+        <span class="keyword">return</span> s;
+    }
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">()</span></span>{
+        System.out.println(<span class="string">"write function"</span>);
+    }
+}</code></pre>
+<p>加上同步操作，防止多次实例，在synchronized之前再加一次判断来增加性能。</p>
+
       
 
       
@@ -189,7 +223,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">gossip</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
         		</li>
       		
 		</ul>
@@ -245,7 +283,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/20/talk-about-death/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/31/单例/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -259,18 +297,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/24/异常/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/08/31/泛型/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          java异常
+          泛型
         
       </div>
     </a>
   
   
-    <a href="/2019/07/17/hello-hexo/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hello hexo</div>
+    <a href="/2019/08/15/对象内存/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">对象内存分析</div>
       <i class="icon-circle-right"></i>
     </a>
   

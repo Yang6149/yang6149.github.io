@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Talk about death | Hexo</title>
+  <title>线程 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Those day I think a lot,finally I start to write.it’s a tough decision.Always I want to write , I quit.This time I would give it a shot.What I want to talk about is Death. I’m afraid of death,every ti">
-<meta name="keywords" content="gossip">
+  <meta name="description" content="线程###线程运行及中断 1234567891011121314151617181920public void run()&amp;#123;        while(true)&amp;#123;            System.out.println(&quot;12&quot;);            try &amp;#123;                Thread.sleep(3000);">
+<meta name="keywords" content="Java,线程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Talk about death">
-<meta property="og:url" content="http://yoursite.com/2019/07/20/talk-about-death/index.html">
+<meta property="og:title" content="线程">
+<meta property="og:url" content="http://yoursite.com/2019/07/30/线程/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Those day I think a lot,finally I start to write.it’s a tough decision.Always I want to write , I quit.This time I would give it a shot.What I want to talk about is Death. I’m afraid of death,every ti">
+<meta property="og:description" content="线程###线程运行及中断 1234567891011121314151617181920public void run()&amp;#123;        while(true)&amp;#123;            System.out.println(&quot;12&quot;);            try &amp;#123;                Thread.sleep(3000);">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-21T02:49:46.892Z">
+<meta property="og:updated_time" content="2019-08-31T12:16:58.353Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Talk about death">
-<meta name="twitter:description" content="Those day I think a lot,finally I start to write.it’s a tough decision.Always I want to write , I quit.This time I would give it a shot.What I want to talk about is Death. I’m afraid of death,every ti">
+<meta name="twitter:title" content="线程">
+<meta name="twitter:description" content="线程###线程运行及中断 1234567891011121314151617181920public void run()&amp;#123;        while(true)&amp;#123;            System.out.println(&quot;12&quot;);            try &amp;#123;                Thread.sleep(3000);">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -155,28 +155,61 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-talk-about-death" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-线程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Talk about death
+      线程
     </h1>
   
 
         
-        <a href="/2019/07/20/talk-about-death/" class="archive-article-date">
-  	<time datetime="2019-07-20T14:34:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
+        <a href="/2019/07/30/线程/" class="archive-article-date">
+  	<time datetime="2019-07-30T09:05:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Those day I think a lot,finally I start to write.it’s a tough decision.<br>Always I want to write , I quit.This time I would give it a shot.What I want to talk about is Death. I’m afraid of death,every time when I think about it I feel despair.It’s all people’s mortal end road. That’s a plot in a movie I watch at yesterday,a little girl come to her forth grade old brother and cry at midnight.She said ‘would mom die?’.The little boy seem upset and going to check if she is OK.But the girl grape his clothes. “you mean in the future?”.Slience.”Every one would die, sooner or later”<br>Then I can’t focus on the movie.About tens years ago,I do same thing as the girl.To ordinary people,everyone know people would die,but they don’t believe they would die.<br>When I am a boy I believe I would die.The horrible thought follow me everywhere ,and I can’t do anything.Even after I went to Psychological Hospital can’t be any better.<br>I try every thing to stop thinking about it .Screaming out aloud,hurt myself. However It’s difficult to get rid of it.Last time I use the scream to protect myself was about 2 mouths ago, and all my roommates though I got a nightmare.<br>I never tell anybody about this except my family.I feel ashame to talk about it,and I don’t talk about it to my family now because I don’t want them to be anxious.<br>Those years I read a lot about death or  some book relate to face to death.such like <em>Tuesday With Morrie</em> and some Haruki’s book. My Purpose write this is want to figure out why I get low frequency about horrible feeling about death.To be honest I don’t know why.But surely ,every time I feel lonely or some negative feeling,I am easier to think about death.So maybe what I should do is be happy.<br>Wow forty mins to write help me a lot .  </p>
-<h4 id="That’s-what-I-learn-in-positive-psychology-Maybe-it-can-reduce-my-anxiety-and-improve-my-expression"><a href="#That’s-what-I-learn-in-positive-psychology-Maybe-it-can-reduce-my-anxiety-and-improve-my-expression" class="headerlink" title="That’s what I learn in positive psychology. Maybe it can reduce my anxiety and improve my expression"></a>That’s what I learn in positive psychology. Maybe it can reduce my anxiety and improve my expression</h4>
+        <h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><p>###线程运行及中断</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">"12"</span>);</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">                Thread.currentThread().interrupt();</span><br><span class="line">                <span class="keyword">if</span>(Thread.currentThread().isInterrupted())&#123;</span><br><span class="line">                    System.out.println(<span class="string">"1!!!!"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        TestThread myt= <span class="keyword">new</span> TestThread();</span><br><span class="line">        myt.start();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>写Thread的子类重写Thread类的run方法<br>Thread.sleep在IDEA中自动帮助try catch  </p>
+<h3 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h3><ul>
+<li>New 新创建</li>
+<li>Runnable 可运行</li>
+<li>Blocked 被阻塞</li>
+<li>Waiting 等待</li>
+<li>Timed waiting 计时等待</li>
+<li>Terminated 被终止</li>
+</ul>
+<ol>
+<li>新创建线程<br>new Thread（r）该线程还没有开始运行，这以为着它的状态时New</li>
+<li>可运行线程<br>一旦调用start方法，线程处于runnable状态。一个可运行的线程可能正在运行也可能没有运行，这取决于操作系统给线程提供运行的时间  </li>
+<li>被阻塞线程和等待线程<br>阻塞或等待时，它暂时不活动。它不运行任何代码且消耗最少的资源。<br>当一个线程试图获取一个内部的对象锁，而该锁被其他线程持有，则该线程进入阻塞状态<br>当所有其他线程释放该锁，并且线程调度器允许本线程持有他时，该线程将变成非阻塞状态<br>当线程等待另一个线程通知调度器一个条件时，它自己进入等待状态。<br>有几个方法有有个超时参数。调用他们导致线程进入计时等待状态。这一状态将保持到超时期满或者接受到适当的通知。带有超时参数的方法有<code>Thread.sleep Object.wait Thread.join Lock.tryLock Condition.await</code>  </li>
+<li>被终止的线程  <ul>
+<li>因为run方法正常退出而自然死亡</li>
+<li>因为一个没有捕获的异常终止了run方法而意外死亡</li>
+</ul>
+</li>
+</ol>
+<h3 id="线程属性"><a href="#线程属性" class="headerlink" title="线程属性"></a>线程属性</h3><p>包括：线程优先级、守护线程、线程组以及处理未捕获异常的处理器</p>
+<ol>
+<li>线程优先级<br>在java中每个线程有一个优先级。默认情况下，一个线程继承它的父线程的优先级。可以用setPriority方法提高或降低任何一个线程的优先级。（1~10）但是线程优先级是高度依赖于系统的。当虚拟机依赖于宿主机的线程实现机制时，java线程的优先级被映射到宿主机平台的优先级上，优先级个数或多或少。<br>例如Windows有7个优先级  </li>
+<li>守护线程<br>可以通过调用<code>t.setDaemon(true)</code>将线程转换为守护线程。这样一个线程没有什么神奇。守护线程的唯一用途时为其他线程提供服务。比如计时线程，它定时地发送“计时器滴答”信号给其他线程或清空过时地高速缓存地线程。当只剩下守护线程时，虚拟机就退出了，由于如果只剩下守护线程，就没必要继续运行程序了。  、</li>
+<li>未捕获异常处理器<br>线程地run方法不能抛出任何被检测地异常，但是，不被检测地异常会导致线程终止，线程就死了。但在线程死亡之间，异常被船体到一个用于未捕获异常地处理器，该处理器必须属于一个实现Thread.UncaughtExceptionHandler接口地类。这个接口只有一个方法<code>void uncaughtException(Thread t,Throwable e)</code><br>可以用setUncaughtExceptionHandler方法为任何线程安装一个处理器。也可以用Thread类地静态方法setDefaultUncaughtExceptionHandler为所有线程安装一个默认地处理器。替换处理器可以使用日志API发送未捕获异常地报告到日志文件  如果不安装默认地处理器，默认地处理器为空，但是，如果不为独立地线程安装处理器，此时地处理器就是该线程地ThreadGroup对象。<h3 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h3>在大多实际地多线程应用中，两个或以上地线程需要共享同一数据地存取。如果两个线程存取相同地对象，并且每一个线程都调用了一个修改该对象地方法，将会发生错误。  </li>
+</ol>
+<ul>
+<li><p>锁对象<br>有两种机制防止<br><code>ReentrantLock</code>对象，使用lock()之后和unlock()方法之前地代码被保护<br>synchronized 代码块 可使用修饰符<br>非静态同步方法的锁对象是this<br>静态同步方法的锁对象是当前的字节码对象</p>
+</li>
+<li><p>条件对象<br>通常进入临界区，却发现在某一条件满足之后才能执行。要使用一个条件对象来管理那些已经获得一个锁但是却不能和做有用工作的线程</p>
+</li>
+</ul>
+
       
 
       
@@ -189,7 +222,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">gossip</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">线程</a>
         		</li>
       		
 		</ul>
@@ -245,7 +282,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/20/talk-about-death/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/30/线程/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -259,18 +296,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/24/异常/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/08/03/接口/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          java异常
+          接口
         
       </div>
     </a>
   
   
-    <a href="/2019/07/17/hello-hexo/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hello hexo</div>
+    <a href="/2019/07/24/异常/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java异常</div>
       <i class="icon-circle-right"></i>
     </a>
   

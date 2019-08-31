@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Class | Hexo</title>
+  <title>java异常 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="Class">
-<meta property="og:url" content="http://yoursite.com/2019/08/31/Class - 副本/index.html">
+  <meta name="description" content="java异常处理异常通常有4种    用户输入错误 设备错误 物理限制 代码错误  在java中，如果某一个方法不能采用正常的途径完成它的任务，就可以通过另一种途径退出，方法不返回任何值，而是抛出一个封装了错误信息的对象。方法将会立刻退出，并不返回任何值。异常处理机制开始搜寻能够处理这种异常状况的异常处理器（exception handler）   异常分类异常对象都是派生于Throwable类的">
+<meta name="keywords" content="Java,异常">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java异常">
+<meta property="og:url" content="http://yoursite.com/2019/07/24/异常/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="java异常处理异常通常有4种    用户输入错误 设备错误 物理限制 代码错误  在java中，如果某一个方法不能采用正常的途径完成它的任务，就可以通过另一种途径退出，方法不返回任何值，而是抛出一个封装了错误信息的对象。方法将会立刻退出，并不返回任何值。异常处理机制开始搜寻能够处理这种异常状况的异常处理器（exception handler）   异常分类异常对象都是派生于Throwable类的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-31T09:05:16.819Z">
+<meta property="og:updated_time" content="2019-08-31T12:17:22.926Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Class">
+<meta name="twitter:title" content="java异常">
+<meta name="twitter:description" content="java异常处理异常通常有4种    用户输入错误 设备错误 物理限制 代码错误  在java中，如果某一个方法不能采用正常的途径完成它的任务，就可以通过另一种途径退出，方法不返回任何值，而是抛出一个封装了错误信息的对象。方法将会立刻退出，并不返回任何值。异常处理机制开始搜寻能够处理这种异常状况的异常处理器（exception handler）   异常分类异常对象都是派生于Throwable类的">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -151,27 +155,89 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Class - 副本" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-异常" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Class
+      java异常
     </h1>
   
 
         
-        <a href="/2019/08/31/Class - 副本/" class="archive-article-date">
-  	<time datetime="2019-08-31T09:05:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-31</time>
+        <a href="/2019/07/24/异常/" class="archive-article-date">
+  	<time datetime="2019-07-24T09:05:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="java异常处理"><a href="#java异常处理" class="headerlink" title="java异常处理"></a>java异常处理</h1><p>异常通常有4种  </p>
+<ol>
+<li>用户输入错误</li>
+<li>设备错误</li>
+<li>物理限制</li>
+<li>代码错误</li>
+</ol>
+<p>在java中，如果某一个方法不能采用正常的途径完成它的任务，就可以通过另一种途径退出，方法不返回任何值，而是抛出一个封装了错误信息的对象。方法将会立刻退出，并不返回任何值。异常处理机制开始搜寻能够处理这种异常状况的异常处理器（exception handler）  </p>
+<h4 id="异常分类"><a href="#异常分类" class="headerlink" title="异常分类"></a>异常分类</h4><p>异常对象都是派生于Throwable类的一个实例，并可以自行创建异常类。  </p>
+<h4 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h4><p>Error类层描述运行时系统的内部错误和资源耗尽，应用层不应该throw这种类型的对象    </p>
+<h4 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h4><ul>
+<li><p>RuntimeException</p>
+<p>自己的问题，错误的类型访问，数组访问越界，访问空指针等</p>
+</li>
+<li><p>其他IO之类的</p>
+</li>
+</ul>
+<p>Error类或RuntimeException类的所有异常成为<code>unchecked异常</code>，其他为<code>checked异常</code><br>抛出异常例如：</p>
+<blockquote>
+<p>public FileInput(String name) throws FileNotFoundException{}</p>
+</blockquote>
+<p>表示构造器将根据给定的String参数产生一个FIleInputStream对象，但也可能抛出一个FileNotFoundException异常，如果发生错误将不会初始化一个FIS对象而是一个FNFE对象。如果抛出了异常对象，运行时会开始搜索异常处理器，以便知道如何处理异常对象<br>一下4种情况应抛出异常：</p>
+<ul>
+<li>调用一个已检查异常的方法</li>
+<li>程序运行过程中发现错误，并且利用<code>throw语句</code>抛出一个已检查异常</li>
+<li>程序出现错误，例如越界</li>
+<li>Java虚拟机和运行时库出现内部错误</li>
+</ul>
+<p>前两种一定要抛出异常或捕获处理，不然线程结束<br>应声明checked异常，不应声明从Runtime Exception继承的unchecked异常</p>
+<h4 id="如何抛出异常"><a href="#如何抛出异常" class="headerlink" title="如何抛出异常"></a>如何抛出异常</h4><p>利用throw语句</p>
+<blockquote>
+<p>if(!a)<br>    throw new EOFExcpetion();<br>可以增加描述异常语句<br>    throw new EOFExcpetion(“this is a Exception”)</p>
+</blockquote>
+<h4 id="创建异常"><a href="#创建异常" class="headerlink" title="创建异常"></a>创建异常</h4><p>创建一个派生于Exception或其子类的类  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FileFormatException</span> <span class="keyword">extends</span> <span class="title">IOException</span></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">FileFormatException</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">FileFormatException</span><span class="params">(String gripe)</span></span>&#123;</span><br><span class="line">    <span class="keyword">super</span>(gripe);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="捕获异常"><a href="#捕获异常" class="headerlink" title="捕获异常"></a>捕获异常</h4><p>如果异常不捕获，那么程序就会终止，并且在控制台打印出异常信息，包括异常的累哦行以及堆栈的内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">    try&#123;</span><br><span class="line">      code</span><br><span class="line">      morecode</span><br><span class="line">    &#125;catch(ExceptionType e)&#123;</span><br><span class="line">      handler for this type</span><br><span class="line">    &#125;catch(ExceptionType e)&#123;</span><br><span class="line">      handler for this type</span><br><span class="line">      e.getMessage();//得到详细错误信息</span><br><span class="line">      e.getClass();//得到异常对象的实际类型</span><br><span class="line">    &#125;finally&#123;</span><br><span class="line">      do things</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">```  </span><br><span class="line">catch也可以抛出异常，例如记录或封装：  </span><br><span class="line">``` java</span><br><span class="line">catch(SQLExceptioin e)&#123;</span><br><span class="line">  Throwable se=new ServletException(&quot;database error&quot;)</span><br><span class="line">  logger.log(level,message,e);</span><br><span class="line">  se.initCause(e);</span><br><span class="line">  throw se;</span><br><span class="line">&#125;</span><br><span class="line">```   </span><br><span class="line">catch到异常后如果继续throw则执行finally里的代码不执行后的代码  </span><br><span class="line">try到异常缺没catch到则执行finally不执行后面的代码，其他情况顺序执行直到throw  </span><br><span class="line">可以使用finally来close资源，语句可简化为：</span><br><span class="line">```java</span><br><span class="line">try(Resource res = bala,...)&#123;</span><br><span class="line">  work with res</span><br><span class="line">&#125;//相当于finally&#123;res.close(),...&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="分析堆栈跟踪元素"><a href="#分析堆栈跟踪元素" class="headerlink" title="分析堆栈跟踪元素"></a>分析堆栈跟踪元素</h4><p>stack trace 是一个<code>方法调用过程</code>的列表，包含了程序执行过程中方法调用的位置，当java程序终止而没有捕获异常的话，就会打印出列表。<br>也可以直接打印出堆栈跟踪信息如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"f"</span>+n);</span><br><span class="line">        Throwable t=<span class="keyword">new</span> Throwable();</span><br><span class="line">        StackTraceElement[] frames=t.getStackTrace();</span><br><span class="line">        <span class="keyword">for</span>(StackTraceElement frame:frames)&#123;</span><br><span class="line">            System.out.println(frame);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">1</span>)<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> f(n-<span class="number">1</span>)*n;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        f(<span class="number">3</span>);</span><br><span class="line">    &#125;</span><br><span class="line">结果如下：</span><br><span class="line">f3</span><br><span class="line">com.exception.TryToStack.f(TryToStack.java:<span class="number">10</span>)</span><br><span class="line">com.exception.TryToStack.main(TryToStack.java:<span class="number">20</span>)</span><br><span class="line">f2</span><br><span class="line">com.exception.TryToStack.f(TryToStack.java:<span class="number">10</span>)</span><br><span class="line">com.exception.TryToStack.f(TryToStack.java:<span class="number">16</span>)</span><br><span class="line">com.exception.TryToStack.main(TryToStack.java:<span class="number">20</span>)</span><br><span class="line">f1</span><br><span class="line">com.exception.TryToStack.f(TryToStack.java:<span class="number">10</span>)</span><br><span class="line">com.exception.TryToStack.f(TryToStack.java:<span class="number">16</span>)</span><br><span class="line">com.exception.TryToStack.f(TryToStack.java:<span class="number">16</span>)</span><br><span class="line">com.exception.TryToStack.main(TryToStack.java:<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h4><p>一共两种形式：  </p>
+<ul>
+<li>assert expression;</li>
+<li>assert expression:表达式;  //可以在堆栈打印出表达式转化的消息字符串  </li>
+</ul>
+<p>在运行时在VM options加入-ea参数，即可调用断言<br>关闭时自动跳过断言代码块  </p>
+<h3 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h3><p>可以调用getLogger创建或检索记录器：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger myLogger=<span class="keyword">new</span> Logger.getLogger(<span class="string">"com.company.mylog"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>日志记录器也有层次结构并且父子间可共享某些属性如：设置权限  </p>
+<ul>
+<li>SEVER</li>
+<li>WARNING</li>
+<li>INFO</li>
+<li>CONFIG</li>
+<li>FINE</li>
+<li>FINER</li>
+<li>FINEST</li>
+</ul>
+<p>默认情况记录前三等级，可通过<code>logger.setLevel(LEVEL.FINE)</code>设置，参数还可以有<code>LEVEL.ALL or LEVEL.OFF</code><br>可调用的方法 待补充</p>
+
       
 
       
@@ -179,6 +245,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">异常</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -229,7 +310,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/31/Class - 副本/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/24/异常/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -243,18 +324,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/31/Class - 副本 (8)/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/30/线程/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Class
+          线程
         
       </div>
     </a>
   
   
-    <a href="/2019/08/31/Class/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Class的三种实例及字符串工厂</div>
+    <a href="/2019/07/20/talk-about-death/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Talk about death</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -409,7 +490,39 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">gossip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">内存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异常</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">泛型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">集合</a>
               </li>
             
             <div class="clearfix"></div>
