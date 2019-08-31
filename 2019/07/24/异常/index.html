@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>java异常 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="java异常处理异常通常有4种    用户输入错误 设备错误 物理限制 代码错误  在java中，如果某一个方法不能采用正常的途径完成它的任务，就可以通过另一种途径退出，方法不返回任何值，而是抛出一个封装了错误信息的对象。方法将会立刻退出，并不返回任何值。异常处理机制开始搜寻能够处理这种异常状况的异常处理器（exception handler）   异常分类异常对象都是派生于Throwable类的">
+  <meta name="description" content="java异常处理异常通常有4种    用户输入错误 设备错误 物理限制 代码错误">
 <meta name="keywords" content="Java,异常">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java异常">
 <meta property="og:url" content="http://yoursite.com/2019/07/24/异常/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="java异常处理异常通常有4种    用户输入错误 设备错误 物理限制 代码错误  在java中，如果某一个方法不能采用正常的途径完成它的任务，就可以通过另一种途径退出，方法不返回任何值，而是抛出一个封装了错误信息的对象。方法将会立刻退出，并不返回任何值。异常处理机制开始搜寻能够处理这种异常状况的异常处理器（exception handler）   异常分类异常对象都是派生于Throwable类的">
+<meta property="og:description" content="java异常处理异常通常有4种    用户输入错误 设备错误 物理限制 代码错误">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-31T12:17:22.926Z">
+<meta property="og:updated_time" content="2019-08-31T12:38:50.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java异常">
-<meta name="twitter:description" content="java异常处理异常通常有4种    用户输入错误 设备错误 物理限制 代码错误  在java中，如果某一个方法不能采用正常的途径完成它的任务，就可以通过另一种途径退出，方法不返回任何值，而是抛出一个封装了错误信息的对象。方法将会立刻退出，并不返回任何值。异常处理机制开始搜寻能够处理这种异常状况的异常处理器（exception handler）   异常分类异常对象都是派生于Throwable类的">
+<meta name="twitter:description" content="java异常处理异常通常有4种    用户输入错误 设备错误 物理限制 代码错误">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/assets/img/profile.jpg" class="js-avatar">
+			<img src="/assets/img/QQ图片20190831203552.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">John Doe</a></h1>
@@ -106,7 +106,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/assets/img/profile.jpg" class="js-avatar">
+				<img src="/assets/img/QQ图片20190831203552.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">John Doe</h1>
@@ -180,12 +180,10 @@
 <li>用户输入错误</li>
 <li>设备错误</li>
 <li>物理限制</li>
-<li>代码错误</li>
+<li>代码错误<a id="more"></a>
+在java中，如果某一个方法不能采用正常的途径完成它的任务，就可以通过另一种途径退出，方法不返回任何值，而是抛出一个封装了错误信息的对象。方法将会立刻退出，并不返回任何值。异常处理机制开始搜寻能够处理这种异常状况的异常处理器（exception handler）  <h4 id="异常分类"><a href="#异常分类" class="headerlink" title="异常分类"></a>异常分类</h4>异常对象都是派生于Throwable类的一个实例，并可以自行创建异常类。  <h4 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h4>Error类层描述运行时系统的内部错误和资源耗尽，应用层不应该throw这种类型的对象    <h4 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h4></li>
 </ol>
-<p>在java中，如果某一个方法不能采用正常的途径完成它的任务，就可以通过另一种途径退出，方法不返回任何值，而是抛出一个封装了错误信息的对象。方法将会立刻退出，并不返回任何值。异常处理机制开始搜寻能够处理这种异常状况的异常处理器（exception handler）  </p>
-<h4 id="异常分类"><a href="#异常分类" class="headerlink" title="异常分类"></a>异常分类</h4><p>异常对象都是派生于Throwable类的一个实例，并可以自行创建异常类。  </p>
-<h4 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h4><p>Error类层描述运行时系统的内部错误和资源耗尽，应用层不应该throw这种类型的对象    </p>
-<h4 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h4><ul>
+<ul>
 <li><p>RuntimeException</p>
 <p>自己的问题，错误的类型访问，数组访问越界，访问空指针等</p>
 </li>
@@ -494,11 +492,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">gossip</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">gossip</a>
               </li>
              
               <li class="article-tag-list-item">

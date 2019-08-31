@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Class类的三种实例化模式类的定义public final class Class&amp;lt;T&amp;gt;extends Object implements Serializable,GenericDeclaration,Type,AnnotatedElement   第一种 Object类支持：public final Class&amp;lt;?&amp;gt; getClass()Person per = ne">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-31T12:09:53.412Z">
+<meta property="og:updated_time" content="2019-08-31T12:37:20.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Class的三种实例及字符串工厂">
 <meta name="twitter:description" content="Class类的三种实例化模式类的定义public final class Class&amp;lt;T&amp;gt;extends Object implements Serializable,GenericDeclaration,Type,AnnotatedElement   第一种 Object类支持：public final Class&amp;lt;?&amp;gt; getClass()Person per = ne">
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/assets/img/profile.jpg" class="js-avatar">
+			<img src="/assets/img/QQ图片20190831203552.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">John Doe</a></h1>
@@ -106,7 +106,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/assets/img/profile.jpg" class="js-avatar">
+				<img src="/assets/img/QQ图片20190831203552.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">John Doe</h1>
@@ -181,6 +181,7 @@ Class&lt;? extends Person &gt; cls = per.getClass();
 System.out.println(cls);# class 包.类
 System.out.println(cls).getName();# 包.类</code></pre>
 <p>如果只是想获得Class类对象必须得先获得指定类的对象</p>
+<a id="more"></a>
 <h3 id="JVM支持"><a href="#JVM支持" class="headerlink" title="JVM支持"></a>JVM支持</h3><pre><code class="java">Class&lt;? extends Person &gt; cls = Person.Class;
 System.out.println(cls);# class 包.类
 System.out.println(cls).getName();# 包.类</code></pre>
@@ -331,18 +332,18 @@ System.out.println(cls).getName();# 包.类</code></pre>
   
 <nav id="article-nav">
   
-    <a href="/2019/09/01/sql语句/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/08/31/单例/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          sql语句
+          单例设计模式
         
       </div>
     </a>
   
   
-    <a href="/2019/08/31/泛型/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">泛型</div>
+    <a href="/2019/08/15/对象内存/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">对象内存分析</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -501,11 +502,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">gossip</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">gossip</a>
               </li>
              
               <li class="article-tag-list-item">

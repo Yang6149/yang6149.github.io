@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>对象内存分析 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="对象内存分析 堆内存 ：保存的是对象的具体信息  ，在程序中堆内存的开辟是通过new来完成的 栈内存 ：保存的是一块堆内存的地址-&amp;gt; 通过地址找到堆内存进而找到对象的具体内容    12Person a;a= new Person();  这里有两步，第一步在栈内存中创建地址指向null，第二步开辟堆内存空间  引用传递所有的堆内存空间可以被不同的栈内存指向">
+  <meta name="description" content="对象内存分析 堆内存 ：保存的是对象的具体信息  ，在程序中堆内存的开辟是通过new来完成的  栈内存 ：保存的是一块堆内存的地址-&amp;gt; 通过地址找到堆内存进而找到对象的具体内容">
 <meta name="keywords" content="Java,内存">
 <meta property="og:type" content="article">
 <meta property="og:title" content="对象内存分析">
 <meta property="og:url" content="http://yoursite.com/2019/08/15/对象内存/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="对象内存分析 堆内存 ：保存的是对象的具体信息  ，在程序中堆内存的开辟是通过new来完成的 栈内存 ：保存的是一块堆内存的地址-&amp;gt; 通过地址找到堆内存进而找到对象的具体内容    12Person a;a= new Person();  这里有两步，第一步在栈内存中创建地址指向null，第二步开辟堆内存空间  引用传递所有的堆内存空间可以被不同的栈内存指向">
+<meta property="og:description" content="对象内存分析 堆内存 ：保存的是对象的具体信息  ，在程序中堆内存的开辟是通过new来完成的  栈内存 ：保存的是一块堆内存的地址-&amp;gt; 通过地址找到堆内存进而找到对象的具体内容">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-31T12:14:36.424Z">
+<meta property="og:updated_time" content="2019-08-31T12:37:49.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对象内存分析">
-<meta name="twitter:description" content="对象内存分析 堆内存 ：保存的是对象的具体信息  ，在程序中堆内存的开辟是通过new来完成的 栈内存 ：保存的是一块堆内存的地址-&amp;gt; 通过地址找到堆内存进而找到对象的具体内容    12Person a;a= new Person();  这里有两步，第一步在栈内存中创建地址指向null，第二步开辟堆内存空间  引用传递所有的堆内存空间可以被不同的栈内存指向">
+<meta name="twitter:description" content="对象内存分析 堆内存 ：保存的是对象的具体信息  ，在程序中堆内存的开辟是通过new来完成的  栈内存 ：保存的是一块堆内存的地址-&amp;gt; 通过地址找到堆内存进而找到对象的具体内容">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/assets/img/profile.jpg" class="js-avatar">
+			<img src="/assets/img/QQ图片20190831203552.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">John Doe</a></h1>
@@ -106,7 +106,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/assets/img/profile.jpg" class="js-avatar">
+				<img src="/assets/img/QQ图片20190831203552.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">John Doe</h1>
@@ -176,11 +176,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="对象内存分析"><a href="#对象内存分析" class="headerlink" title="对象内存分析"></a>对象内存分析</h1><ul>
-<li>堆内存 ：保存的是对象的具体信息  ，在程序中堆内存的开辟是通过new来完成的</li>
-<li>栈内存 ：保存的是一块堆内存的地址-&gt; 通过地址找到堆内存进而找到对象的具体内容  </li>
-</ul>
+<li><p>堆内存 ：保存的是对象的具体信息  ，在程序中堆内存的开辟是通过new来完成的</p>
+</li>
+<li><p>栈内存 ：保存的是一块堆内存的地址-&gt; 通过地址找到堆内存进而找到对象的具体内容  </p>
+<a id="more"></a>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Person a;</span><br><span class="line">a= <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
 
+</li>
+</ul>
 <h2 id="这里有两步，第一步在栈内存中创建地址指向null，第二步开辟堆内存空间"><a href="#这里有两步，第一步在栈内存中创建地址指向null，第二步开辟堆内存空间" class="headerlink" title="这里有两步，第一步在栈内存中创建地址指向null，第二步开辟堆内存空间  "></a>这里有两步，第一步在栈内存中创建地址指向null，第二步开辟堆内存空间  </h2><h1 id="引用传递"><a href="#引用传递" class="headerlink" title="引用传递"></a>引用传递</h1><p>所有的堆内存空间可以被不同的栈内存指向</p>
 
       
@@ -269,11 +272,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/31/单例/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/08/31/Class/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          单例设计模式
+          Class的三种实例及字符串工厂
         
       </div>
     </a>
@@ -439,11 +442,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">gossip</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">gossip</a>
               </li>
              
               <li class="article-tag-list-item">
