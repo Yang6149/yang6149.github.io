@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="spring_iocioc原理ioc就是控制反转，原理是从主动的创建资源再使用转变为被动的接受资源并使用，在spring中是在beans.xml中设置bean然后可以在java文件中直接使用创建好的对象。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-19T06:47:57.172Z">
+<meta property="og:updated_time" content="2019-09-19T10:51:16.781Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring_ioc入门">
 <meta name="twitter:description" content="spring_iocioc原理ioc就是控制反转，原理是从主动的创建资源再使用转变为被动的接受资源并使用，在spring中是在beans.xml中设置bean然后可以在java文件中直接使用创建好的对象。">
@@ -177,8 +177,16 @@
       
         <h1 id="spring-ioc"><a href="#spring-ioc" class="headerlink" title="spring_ioc"></a>spring_ioc</h1><h3 id="ioc原理"><a href="#ioc原理" class="headerlink" title="ioc原理"></a>ioc原理</h3><p>ioc就是控制反转，原理是从主动的创建资源再使用转变为被动的接受资源并使用，在spring中是在beans.xml中设置bean然后可以在java文件中直接使用创建好的对象。  </p>
 <a id="more"></a>
+
 <h4 id="xml配置文件"><a href="#xml配置文件" class="headerlink" title="xml配置文件"></a>xml配置文件</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"mysql"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"Dao.Mysql"</span>&gt;</span><br><span class="line">        &lt;property name="name" value="mysql"&gt;&lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"oracle"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"Dao.Oracle"</span>&gt;</span><br><span class="line">        &lt;property name="name" value="oracle"&gt;&lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"service"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"service.Service"</span>&gt;</span><br><span class="line">        &lt;property name="sql" ref="oracle"&gt;&lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">```  </span><br><span class="line">#### java的test文件</span><br><span class="line">```java</span><br><span class="line">ApplicationContext context = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"beans.xml"</span>);</span><br><span class="line">        Service hello = (Service) context.getBean(<span class="string">"service"</span>);</span><br><span class="line">        </span><br><span class="line">        hello.show();</span><br></pre></td></tr></table></figure>
 
+<h4 id="bean的scope"><a href="#bean的scope" class="headerlink" title="bean的scope"></a>bean的scope</h4><ul>
+<li>singleton 单例</li>
+<li>propotype 原型</li>
+<li>request   每次请求时创建一个新的对象</li>
+<li>session   每次会话创建一个新的对象  </li>
+</ul>
+<h4 id="DI-（Dependency-Injection）"><a href="#DI-（Dependency-Injection）" class="headerlink" title="DI （Dependency Injection）"></a>DI （Dependency Injection）</h4><p><a href="https://docs.spring.io/spring/docs/5.1.9.RELEASE/spring-framework-reference/core.html#beans-dependencies" target="_blank" rel="noopener">详细DI操作</a><br>类型很多，但不用死记。一般ide会提示</p>
 
       
 
@@ -431,15 +439,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -447,11 +447,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">内存</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">接口</a>
+                <a href="javascript:void(0)" class="js-tag color3">内存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -459,11 +459,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集合</a>
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">泛型</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">集合</a>
               </li>
             
             <div class="clearfix"></div>
