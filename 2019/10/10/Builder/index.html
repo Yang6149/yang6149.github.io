@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>builder在多参数构造器中应用 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题最近在写一些bean，一些类的参数特别多，动辄几十个。在effective java中看到了用builder的方法。通常遇到很多参数的话可以使用重载多个构造器，但是这样写起来就很难知道传入的具体位置是什么参数，如果用如下这种为每个都设置set方法的话则在多线程可能出现问题 12345678910111213141516171819asd// JavaBeans Pattern - allows">
+  <meta name="description" content="问题最近在写一些bean，一些类的参数特别多，动辄几十个。在effective java中看到了用builder的方法。通常遇到很多参数的话可以使用重载多个构造器，但是这样写起来就很难知道传入的具体位置是什么参数，如果用如下这种为每个都设置set方法的话则在多线程可能出现问题">
 <meta name="keywords" content="java,设计方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="builder在多参数构造器中应用">
 <meta property="og:url" content="http://yoursite.com/2019/10/10/Builder/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="问题最近在写一些bean，一些类的参数特别多，动辄几十个。在effective java中看到了用builder的方法。通常遇到很多参数的话可以使用重载多个构造器，但是这样写起来就很难知道传入的具体位置是什么参数，如果用如下这种为每个都设置set方法的话则在多线程可能出现问题 12345678910111213141516171819asd// JavaBeans Pattern - allows">
+<meta property="og:description" content="问题最近在写一些bean，一些类的参数特别多，动辄几十个。在effective java中看到了用builder的方法。通常遇到很多参数的话可以使用重载多个构造器，但是这样写起来就很难知道传入的具体位置是什么参数，如果用如下这种为每个都设置set方法的话则在多线程可能出现问题">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-10T16:01:16.238Z">
+<meta property="og:updated_time" content="2019-10-10T16:04:43.406Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="builder在多参数构造器中应用">
-<meta name="twitter:description" content="问题最近在写一些bean，一些类的参数特别多，动辄几十个。在effective java中看到了用builder的方法。通常遇到很多参数的话可以使用重载多个构造器，但是这样写起来就很难知道传入的具体位置是什么参数，如果用如下这种为每个都设置set方法的话则在多线程可能出现问题 12345678910111213141516171819asd// JavaBeans Pattern - allows">
+<meta name="twitter:description" content="问题最近在写一些bean，一些类的参数特别多，动辄几十个。在effective java中看到了用builder的方法。通常遇到很多参数的话可以使用重载多个构造器，但是这样写起来就很难知道传入的具体位置是什么参数，如果用如下这种为每个都设置set方法的话则在多线程可能出现问题">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -176,6 +176,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>最近在写一些bean，一些类的参数特别多，动辄几十个。<br>在effective java中看到了用builder的方法。<br>通常遇到很多参数的话可以使用重载多个构造器，但是这样写起来就很难知道传入的具体位置是什么参数，如果用如下这种为每个都设置set方法的话则在多线程可能出现问题</p>
+<a id="more"></a>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">asd</span><br><span class="line"><span class="comment">// JavaBeans Pattern - allows inconsistency, mandates mutability </span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NutritionFacts</span> </span>&#123; </span><br><span class="line"><span class="comment">// Parameters initialized to default values (if any) </span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> servingSize = -<span class="number">1</span>; </span><br><span class="line">	<span class="comment">// Required; no default value </span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> servings = -<span class="number">1</span>; </span><br><span class="line">	<span class="comment">// Required; no default value </span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> calories = <span class="number">0</span>; </span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> fat = <span class="number">0</span>; </span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> sodium = <span class="number">0</span>; <span class="keyword">private</span> <span class="keyword">int</span> carbohydrate = <span class="number">0</span>; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">NutritionFacts</span><span class="params">()</span> </span>&#123; &#125; </span><br><span class="line">	<span class="comment">// Setters </span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setServingSize</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123; servingSize = val; &#125; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setServings</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123; servings = val; &#125; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCalories</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123; calories = val; &#125; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFat</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123; fat = val; &#125; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSodium</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123; sodium = val; &#125; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCarbohydrate</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123; carbohydrate = val; &#125; &#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>如果使用builder的话就可以很好的解决这类问题。</p>
@@ -415,14 +416,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计方法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -431,7 +424,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">gossip</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计方法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -443,15 +440,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">内存</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">接口</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异常</a>
+                <a href="javascript:void(0)" class="js-tag color2">gossip</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -459,7 +448,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集合</a>
+                <a href="javascript:void(0)" class="js-tag color3">内存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异常</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">泛型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -467,7 +468,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">泛型</a>
+                <a href="javascript:void(0)" class="js-tag color3">集合</a>
               </li>
             
             <div class="clearfix"></div>
